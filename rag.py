@@ -58,7 +58,7 @@ def find_similar(needle, haystack):
     return sorted(zip(similarity_scores, range(len(haystack))), reverse=True)
 
 def main():
-    SYSTEM_PROMPT = """Eres un chatbot de atención al alumno que contesta basándose en el contexto.
+    SYSTEM_PROMPT = f"""Eres un chatbot de atención al alumno que contesta basándose en el contexto.
                        Solo contestar con lo que existe en el contexto.
                        Si no estás seguro di que no lo sabes.
                        Respuestas cortas en el idioma en el que te preguntan.
