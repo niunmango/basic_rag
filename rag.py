@@ -3,6 +3,7 @@ import ollama
 import os
 import json
 from numpy.linalg import norm
+import time
 
 MODEL_NAME = "llama3"
 
@@ -75,6 +76,9 @@ def main():
         if prompt.lower() == "/chau":
             break
 
+        # Start timer
+        start_time = time.time()
+
         prompt_embedding = ollama.embeddings(model=MODEL_NAME, prompt=prompt)["embedding"]
         # most similar results
         most_similar_chunks = find_similar(prompt_embedding, embeddings)[:5]
@@ -92,7 +96,13 @@ def main():
             ]
         )
 
+        # End timer and calculate elapsed time
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+
         print(response["message"]["content"])
+        print(f"Respuesta obtenida en {elapsed_time:.2f} segundos.")  # Print time with 2 decimal places
+
 
 if __name__ == "__main__":
     main()

@@ -21,7 +21,7 @@ pip install -r requirements.txt
 ```bash
 python rag.py
 ```
-Se termina la sesión con /chau
+Se termina la sesión con `/chau`
 
 ## Modificar el contenido y/o el modelo
 
