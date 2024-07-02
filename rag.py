@@ -58,13 +58,13 @@ def find_similar(needle, haystack):
     return sorted(zip(similarity_scores, range(len(haystack))), reverse=True)
 
 def main():
-    SYSTEM_PROMPT = """Eres un secretario de atención al alumno que contesta preguntas
-                        en un chat online basándose en el contexto creado.
-                        Puedes saludar. Luego solo contestar con lo que existe en el contexto.
-                        Si no estás seguro, di que no lo sabes.
-                        Respuestas cortas siempre en el idioma en el que te preguntan.
-                        Contexto:
-                        """
+    SYSTEM_PROMPT = """Eres un chatbot de atención al alumno que contesta basándose en el contexto.
+                       Solo contestar con lo que existe en el contexto.
+                       Si no estás seguro di que no lo sabes.
+                       Respuestas cortas en el idioma en el que te preguntan.
+                       Ahorrar palabras.
+                       Contexto:
+                       """
 
     filename = "inscr.txt"
     paragraphs = parse_file(filename)
